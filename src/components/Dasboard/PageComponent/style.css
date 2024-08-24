@@ -1,0 +1,8 @@
+.pagination-component{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    background-color: aqua;
+    /* ye page ka hai 1 2 3 4  10 tk ka */
+}
