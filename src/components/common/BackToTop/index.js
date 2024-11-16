@@ -1,37 +1,40 @@
-// 
-
-import React, { useEffect } from "react";
-import "./styles.css";
-import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
+import React, { useEffect, useRef } from "react";
+import ExpandLessRoundedIcon from "@mui/icons-material/ExpandLessRounded";
+import './styles.css';  // Import your CSS file
 
 function BackToTop() {
+  const buttonRef = useRef(null);
+
   useEffect(() => {
-    let mybutton = document.getElementById("myBtn");
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        mybutton.style.display = "flex";
+    const handleScroll = () => {
+      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        if (buttonRef.current) {
+          buttonRef.current.style.display = "flex";  // Show button
+        }
       } else {
-        mybutton.style.display = "none";
+        if (buttonRef.current) {
+          buttonRef.current.style.display = "none";  // Hide button
+        }
       }
-    }
-
-    window.onscroll = scrollFunction;
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.onscroll = null;
     };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
+  const scrollToTop = () => {
+    document.body.scrollTop = 0;  // For Safari
+    document.documentElement.scrollTop = 0;  // For Chrome, Firefox, IE, and Opera
+  };
 
   return (
-    <div className="back-to-top-btn" id="myBtn" onClick={topFunction}>
-      <ArrowUpwardRoundedIcon style={{ color: "blue" }} />
+    <div
+      ref={buttonRef}
+      className="back-to-top-btn"  // Use your CSS class
+      style={{ display: "none" }}  // Hidden initially
+      onClick={scrollToTop}
+    >
+      <ExpandLessRoundedIcon />
     </div>
   );
 }

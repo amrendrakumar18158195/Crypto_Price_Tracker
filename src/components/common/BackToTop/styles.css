@@ -1,4 +1,4 @@
-.back-to-top-btn{
+.back-to-top-btn {
     position: fixed;
     bottom: 1.5rem;
     right: 1.5rem;
@@ -7,15 +7,8 @@
     align-items: center;
     width: 3rem;
     height: 3rem;
-    border: 2px solid var(--blue);
+    border: 2px solid var(--blue); /* Use your custom color variable */
     border-radius: 50%;
     margin: 1.5rem;
     cursor: pointer;
 }
-
-
-
-
-
-
-

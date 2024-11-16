@@ -73,7 +73,7 @@ function ComparePage(){
     return (
         <div>
           <Header/>
-        <p>hi AMRENDRA KUMAR kaise h </p>
+        {/* <p>hi AMRENDRA KUMAR kaise h </p> */}
         {/* {isLoading ? (   //ye blunder kr rha hai
         <Loader />
       ) : (
