@@ -17,7 +17,7 @@ function MainComponent(){
             animate={{opacity:1,scale:1}}        
             transition={{duration:1}}        
             >
-             Tack Crypto
+             Track Crypto
              </motion.h1>
             <motion.h1 className="real-time-heading"
                initial={{opacity:0,scale:0,x:50}}        
